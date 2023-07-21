@@ -180,6 +180,10 @@ module ActiveRecord
         database_version >= "3.8.3"
       end
 
+      def supports_insert_returning?
+        database_version >= "3.35"
+      end
+
       def supports_insert_on_conflict?
         database_version >= "3.24.0"
       end
@@ -387,6 +391,7 @@ module ActiveRecord
           end
         end
 
+        sql << " RETURNING #{insert.returning}" if insert.returning
         sql
       end
 

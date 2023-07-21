@@ -1,4 +1,8 @@
-*   Specify callback in `has_secure_token`
+* Include support for RETURNING statements in Sqlite 3.35 and above.
+
+    *Ben Forrest*
+
+* Specify callback in `has_secure_token`
 
     ```ruby
     class User < ApplicationRecord
